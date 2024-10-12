@@ -1,0 +1,302 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@600&display=swap');
+
+/* CSS Variables for Colors and Fonts */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #18bc9c;
+    --background-gradient: linear-gradient(135deg, #2c3e50, #4ca1af);
+    --text-color: #ffffff;
+    --card-bg: rgba(44, 62, 80, 0.8);
+    --card-hover-bg: rgba(44, 62, 80, 1);
+    --link-bg: #18bc9c;
+    --link-hover-bg: #16a085;
+    --transition-speed: 0.3s;
+}
+
+/* Reset Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: var(--background-gradient);
+    color: #fff;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header Styling */
+.header {
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    padding: 150px 20px;
+    text-align: center;
+    animation: fadeInDown 1s ease-out;
+}
+
+.header-content h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    color: var(--text-color);
+    animation: slideInLeft 1s ease-out;
+}
+
+.header-content p {
+    font-size: 1.3rem;
+    color: #ddd;
+    max-width: 700px;
+    margin: 0 auto;
+    animation: slideInRight 1s ease-out;
+}
+
+/* Team Section Styling */
+.team-section {
+    padding: 80px 20px;
+    text-align: center;
+    background: rgba(44, 62, 80, 0.9);
+    animation: fadeInUp 1s ease-out;
+}
+
+.team-section h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.8rem;
+    margin-bottom: 50px;
+    color: var(--secondary-color);
+}
+
+.team-container {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.team-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 30px 20px;
+    width: 260px;
+    transition: transform var(--transition-speed), background var(--transition-speed);
+    cursor: pointer;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+    position: relative;
+    overflow: hidden;
+}
+
+.team-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: rotate(45deg);
+    transition: all var(--transition-speed);
+}
+
+.team-card:hover::before {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.team-card:hover {
+    transform: translateY(-10px);
+    background: var(--card-hover-bg);
+}
+
+.team-card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 20px;
+    display: block;
+    border: 4px solid var(--secondary-color);
+    transition: transform var(--transition-speed);
+}
+
+.team-card:hover img {
+    transform: scale(1.05);
+}
+
+.team-card h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+.team-card p {
+    font-size: 1rem;
+    color: #ccc;
+}
+
+/* Project Section Styling */
+.project-section {
+    padding: 80px 20px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.7);
+    animation: fadeIn 1.5s ease-out;
+}
+
+.project-section h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.8rem;
+    margin-bottom: 30px;
+    color: var(--text-color);
+}
+
+.project-section p {
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+    color: #ddd;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.project-link {
+    display: inline-block;
+    padding: 15px 35px;
+    background: var(--link-bg);
+    color: #fff;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: background var(--transition-speed), transform var(--transition-speed);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.project-link:hover {
+    background: var(--link-hover-bg);
+    transform: translateY(-5px);
+}
+
+/* Footer Styling */
+.footer {
+    background: rgba(0, 0, 0, 0.8);
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: auto;
+    animation: fadeInUp 1s ease-out;
+}
+
+.footer p {
+    font-size: 0.9rem;
+    color: #ccc;
+    margin-bottom: 15px;
+}
+
+.social-links a {
+    color: #ccc;
+    margin: 0 10px;
+    font-size: 1.3rem;
+    transition: color var(--transition-speed);
+}
+
+.social-links a:hover {
+    color: var(--secondary-color);
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-100px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+    from { opacity: 0; transform: translateX(100px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .team-container {
+        gap: 40px;
+    }
+
+    .team-card {
+        width: 220px;
+        padding: 25px 15px;
+    }
+
+    .team-card img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .header-content h1 {
+        font-size: 3rem;
+    }
+
+    .header-content p {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .team-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .team-card {
+        width: 80%;
+    }
+
+    .project-link {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .header-content p {
+        font-size: 1rem;
+    }
+
+    .team-card {
+        width: 90%;
+    }
+
+    .project-section h2 {
+        font-size: 2.2rem;
+    }
+
+    .project-section p {
+        font-size: 1rem;
+    }
+
+    .footer p {
+        font-size: 0.8rem;
+    }
+}
